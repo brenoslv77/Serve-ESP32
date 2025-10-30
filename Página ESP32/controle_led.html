@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controlando LED</title>
+</head>
+<style>
+        body{
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #60a5fa;
+            color: #000000;
+            text-align: center;
+        }
+        h1 {
+            color: hsl(0, 0%, 0%);
+        }
+
+        #LED1 {
+            color: #fffb00;
+        }
+
+        #LED2 {
+            color: #33ff00;
+        }
+
+        p{
+            color: #000000;
+            margin-bottom: 30px;
+        }
+        button{
+            color: #000000;
+            background-color: #ffffff;
+            border: none;
+            padding: 14px 24px;
+            margin: 8px;
+            border-radius: 8px;
+            font-size: 16px;
+            width: 100%;
+            max-width: 220px;
+        }
+</style>
+<body>
+    <h1>Turma de IoT01 - Senac L13</h1>
+    <p>Voce esta conectado ao Servidor de <strong>Breno</strong></p>
+    <br></br>
+    <h2 id="LED1">LED Amarelo</h2>
+    <button onclick="location.href='/liga1'">Liga ✅</button>
+    <button onclick="location.href='/desliga1'">Desliga ⛔</button>
+    <h2 id="LED2"> LED Verde </h2>
+    <button onclick="location.href='/liga2'">Liga ✅</button>
+    <button onclick="location.href='/desliga2'">Desliga ⛔</button>
+
+</body>
+</html>
