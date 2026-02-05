@@ -1,0 +1,67 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart RC Car</title>
+  <link rel="stylesheet" href="car2.css">
+</head>
+<body>
+
+<section id="home" class="page active">
+  <div class="intro">
+    <h1><span>Carro</span> Inteligente</h1>
+    <p>Carro Inteligente feito pelos profissionais de IoT</p>
+    <button class="next" onclick="goToPage('info')">Entrar</button>
+  </div>
+</section>
+
+<section id="info" class="page">
+  <h2>Informações do Carrinho</h2>
+  <div class="card-container">
+    <div class="card"><h3>Desenvolvido</h3><p>Breno e Henrique</p></div>
+    <div class="card"><h3>Microcontrolador</h3><p>ESP32</p></div>
+    <div class="card"><h3>Projeto Integrador</h3><p>Senac</p></div>
+    <div class="card"><h3>Status</h3><p>Operando normalmente</p></div>
+  </div>
+  <button class="next" onclick="goToPage('control')">Ir para Controle</button>
+</section>
+
+<section id="control" class="page">
+  <h2>Controle do Carrinho</h2>
+
+  <div class="control-panel">
+    <div class="joystick">
+      <button class="btn up">▲</button>
+      <div class="middle">
+        <button class="btn left">◀</button>
+        <button class="btn stop"></button>
+        <button class="btn right">▶</button>
+      </div>
+      <button class="btn down">▼</button>
+    </div>
+
+    <button class="back" onclick="goToPage('info')">Voltar</button>
+  </div>
+</section>
+
+<script>
+function goToPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function sendCommand(cmd){
+  fetch(`/cmd?go=${cmd}`);
+}
+
+document.querySelector(".up").onclick =()=>sendCommand("frente");
+document.querySelector(".down").onclick =()=>sendCommand("tras");
+document.querySelector(".left").onclick =()=>sendCommand("esquerda");
+document.querySelector(".right").onclick=()=>sendCommand("direita");
+document.querySelector(".stop").onclick=()=>sendCommand("stop");
+</script>
+
+</body>
+</html>
