@@ -1,7 +1,7 @@
+// WIFI 
 #include <WiFi.h>
 #include <WebServer.h>
 
-// ========= WIFI =========
 const char* ssid = "SmartCar";
 const char* password = "12345678";
 
